@@ -1,12 +1,29 @@
 function toggleToDo(element){
-  const newClass;
 
-  const completed = element.querySelector(".fa").classList.contains("fa-check-square");
+  var faClassName = element.querySelector(".fa");
 
-  if (completed) {
-    newClass = element.querySelector(".fa").className.replace("fa-check-square", "fa-square-o");
-  } else {
-    newClass = element.querySelector(".fa").className.replace("fa-square-o", "fa-check-square");
-  }
-  element.querySelector(".fa").className = newClass;
+  faClassName.classList.toggle("fa-check-square");
 }
+
+
+  // let newClass;
+
+  // console.log(element);
+
+  // let completed = faClassName.classList.contains("fa-check-square");
+
+
+  // if (completed) {
+  //   newClass = faClassName.className.replace("fa-check-square", "fa-square-o");
+  // } else {
+  //   newClass = faClassName.className.replace("fa-square-o", "fa-check-square");
+  // }
+  // faClassName.className = newClass;
+
+
+// function toggleToDo() {
+// var faClassName = document.getElementsByClassName("item1");
+// faClassName[1].classList.toggle("isClicked");
+// }
+
+// Question: why the i tag in the html doc?.
