@@ -24,6 +24,10 @@
   border-radius: 2px;
 }
 
+.item .fa{
+  padding-right: 5px;
+}
+
 .completed .item {
   background: #e0ffe4;
   border: 1px solid #02ff00;
