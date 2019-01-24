@@ -25,6 +25,29 @@ function toggleToDo(element){
     window.clearTimeout(timeoutID);
   }
   const timeoutID = window.setTimeout(() => transition(timeoutID), 100);
+  const notCompletedLength = document.getElementById('not-completed').getElementsByClassName('item').length;
+
+  if (notCompletedLength === 0) {
+    const noItems = document.createElement('li');
+    noItems.classList.add('no-items-placeholder');
+    noItems.innerText = 'There are no items';
+    document.getElementById('not-completed').appendChild(noItems);
+  } else {
+    // Look into this code 👇
+    // Next time we will
+    // - Reproduce this code for "Completed Items"
+    // - Style the placeholder
+    // - Refactor
+    const wrapper = document.getElementById('not-completed');
+    const elementToRemove = wrapper.getElementsByClassName('no-items-placeholder')[0];
+
+    if (elementToRemove) {
+      wrapper.removeChild(elementToRemove);
+    }
+
+  }
+
+
 }
 
 const toDoItems = [ //Create an array of 6 objects with a flag completed or not completed
