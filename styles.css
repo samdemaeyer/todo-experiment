@@ -15,6 +15,7 @@
   padding: 0;
 }
 
+
 .item {
   list-style: none;
   background: #e0f0ff;
@@ -22,15 +23,21 @@
   margin-bottom: 5px;
   padding: 5px;
   border-radius: 2px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
 }
 
-.item .fa {
+.item .fa{
   padding-right: 5px;
 }
 
 .completed .item {
   background: #e0ffe4;
   border: 1px solid #02ff00;
+}
+
+.transition-in {
+  opacity: 0
 }
 
 .item:hover {
