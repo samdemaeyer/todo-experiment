@@ -5,7 +5,6 @@ function convertToBool(str) {
 }
 
 function toggleToDo(element){
-
   const faClassName = element.getElementsByClassName('fa')[0];
   const isCompleted = convertToBool(element.getAttribute('data-completed'));
   let listWrapperId = 'completed';
@@ -25,38 +24,37 @@ function toggleToDo(element){
     window.clearTimeout(timeoutID);
   }
   const timeoutID = window.setTimeout(() => transition(timeoutID), 100);
-  const notCompletedLength = document.getElementById('not-completed').getElementsByClassName('item').length;
 
-  if (notCompletedLength === 0) {
-    const noItems = document.createElement('li');
-    noItems.classList.add('no-items-placeholder');
-    noItems.innerText = 'There are no items';
-    document.getElementById('not-completed').appendChild(noItems);
-  } else {
-    // Look into this code 👇
-    // Next time we will
-    // - Reproduce this code for "Completed Items"
-    // - Style the placeholder
-    // - Refactor
-    const wrapper = document.getElementById('not-completed');
-    const elementToRemove = wrapper.getElementsByClassName('no-items-placeholder')[0];
-
-    if (elementToRemove) {
-      wrapper.removeChild(elementToRemove);
-    }
-
-  }
-
+  validateListItems('not-completed');
+  validateListItems('completed');
 
 }
 
+function validateListItems(wrapperId) {
+  const wrapperElement = document.getElementById(wrapperId);
+  const notCompletedLength = wrapperElement.getElementsByClassName('item').length;
+
+  if (notCompletedLength === 0) {//If statement for if the li element equals 0, then create a new li saying 'There are no items'
+    const noItems = document.createElement('li'); //create a new li element
+    noItems.classList.add('no-items-placeholder'); //Add class 'no-items-placeholder'
+    noItems.innerText = 'There are no items';//Add innertext to the li element
+    wrapperElement.appendChild(noItems);//append noItems to parent which is ul
+  } else {
+    const elementToRemove = wrapperElement.querySelector('.no-items-placeholder'); //get id for for no
+
+    if (elementToRemove) {
+      wrapperElement.removeChild(elementToRemove);
+    }
+  }
+}
+
 const toDoItems = [ //Create an array of 6 objects with a flag completed or not completed
-  { name: 'Todo 1', completed:false },
-  { name: 'Todo 2', completed:false },
-  { name: 'Todo 3', completed:false },
-  { name: 'Todo 4', completed:true },
-  { name: 'Todo 5', completed:true },
-  { name: 'Todo 6', completed:true },
+  { name: 'Todo 1', completed: false },
+  { name: 'Todo 2', completed: false },
+  { name: 'Todo 3', completed: false },
+  { name: 'Todo 4', completed: true },
+  { name: 'Todo 5', completed: true },
+  { name: 'Todo 6', completed: true },
 ];
 
 toDoItems.forEach(function(toDoItem) {

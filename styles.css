@@ -47,3 +47,10 @@
 .isClicked {
   background: red;
 }
+
+.no-items-placeholder {
+  color: grey;
+  font-size: 20px;
+  text-align: center;
+  list-style: none;
+}
