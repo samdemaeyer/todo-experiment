@@ -6,18 +6,17 @@
   <title>Todo List</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="main.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-
-
     <h1 class="title">Todo List</h1>
+
     <h4>Add a todo list</h4>
-    <p>
-      <input id="entered-listItem">
-    </p>
-    <button>Add</button>
+    <div class="add-todo-container">
+      <input id="entered-listItem" class="add-todo-entry">
+      <button id="addButton" class="add-todo-btn" disabled>Add</button>
+    </div>
 
     <div class="todo-list-wrapper">
       <h3>Todo:</h3>
@@ -34,5 +33,7 @@
       </ul>
     </div>
   </div>
+  <script src="main.js" defer></script>
+
 </body>
 </html>
