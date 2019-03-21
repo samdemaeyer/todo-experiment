@@ -35,16 +35,9 @@ function toggleToDo(element){
 document.getElementById('addButton').addEventListener('click', function(){
   var itemToAdd = document.getElementById('entered-listItem').value;
 
-  if ( itemToAdd === '')
-  {
-    alert('Please input a value');
-    return false;
-  }
-  else {
-    ammendHtml(itemToAdd);
-    document.getElementById('entered-listItem').value = '';
-  }
-
+  ammendHtml(itemToAdd);
+  validateListItems('not-completed');
+  document.getElementById('entered-listItem').value = '';
 });
 
 document.getElementById('entered-listItem').addEventListener('input', function(){
@@ -110,7 +103,7 @@ function ammendHtml (item) {
   const newListTitle = document.createElement('span');//Create a span
 
   if(typeof item === 'string') {
-    newListTitle.innerText = item
+    newListTitle.innerText = item;
   }
   else {
     newListTitle.innerText = item.name;//Add the name of the item to the span
